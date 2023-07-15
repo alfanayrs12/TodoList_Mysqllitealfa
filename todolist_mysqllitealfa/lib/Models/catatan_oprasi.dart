@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:todo_list/Models/note.dart';
-import 'package:todo_list/helpers/dbhelper.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
+import 'package:todolist_mysqllitealfa/helpers/dbhelper.dart';
 
 class NotesOperation with ChangeNotifier {
   List<Note> _notes = [];

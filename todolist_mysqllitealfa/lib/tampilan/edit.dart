@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list/Models/notes_operation.dart';
-import 'package:todo_list/Models/note.dart';
-import 'package:todo_list/helpers/dbhelper.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan_oprasi.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
+import 'package:todolist_mysqllitealfa/helpers/dbhelper.dart';
 
 class EditScreen extends StatefulWidget {
   final Note note;
@@ -33,7 +33,7 @@ class _EditScreenState extends State<EditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color.fromARGB(255, 1, 194, 207),
       appBar: AppBar(
         title: const Text('Edit Note'),
         centerTitle: true,
@@ -106,7 +106,7 @@ class _EditScreenState extends State<EditScreen> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
+                    color: Color.fromARGB(255, 1, 194, 207),
                   )),
             )
           ],

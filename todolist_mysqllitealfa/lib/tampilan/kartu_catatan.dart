@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list/Models/notes_operation.dart';
-import 'package:todo_list/Models/note.dart';
-import 'package:todo_list/screen/add_screen.dart';
-import 'package:todo_list/screen/edit_screen.dart';
-import 'package:todo_list/screen/notes_card.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan_oprasi.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
+import 'package:todolist_mysqllitealfa/tampilan/add.dart';
+import 'package:todolist_mysqllitealfa/tampilan/edit.dart';
+import 'package:todolist_mysqllitealfa/tampilan/kartu_catatan.dart';
 
 class NotesCard extends StatelessWidget {
   final Note note;

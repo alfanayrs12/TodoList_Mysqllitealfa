@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list/Models/notes_operation.dart';
-import 'package:todo_list/Models/note.dart';
-import 'package:todo_list/screen/add_screen.dart';
-import 'package:todo_list/screen/edit_screen.dart';
-import 'package:todo_list/screen/notes_card.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan_oprasi.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
+import 'package:todolist_mysqllitealfa/tampilan/add.dart';
+import 'package:todolist_mysqllitealfa/tampilan/edit.dart';
+import 'package:todolist_mysqllitealfa/tampilan/kartu_catatan.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
     Provider.of<NotesOperation>(context, listen: false).getNotesFromDatabase();
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color.fromARGB(255, 1, 194, 207),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -24,12 +24,12 @@ class HomeScreen extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.white,
-        child: const Icon(Icons.add, size: 30, color: Colors.blueGrey),
+        backgroundColor: const Color.fromARGB(255, 235, 0, 0),
+        child: const Icon(Icons.add, size: 30, color: Color.fromARGB(255, 218, 241, 3)),
       ),
       appBar: AppBar(
         title: const Text(
-          'Todo List',
+          'Catatan Harian',
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list/Models/notes_operation.dart';
-import 'package:todo_list/Models/note.dart';
-import 'package:todo_list/helpers/dbhelper.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan_oprasi.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
+import 'package:todolist_mysqllitealfa/helpers/dbhelper.dart';
 
 class AddScreen extends StatelessWidget {
   const AddScreen({Key? key});
@@ -13,9 +13,9 @@ class AddScreen extends StatelessWidget {
     late String descriptionText;
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color.fromARGB(255, 1, 194, 207),
       appBar: AppBar(
-        title: const Text('Todo List'),
+        title: const Text('Catatan Harian'),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -87,7 +87,7 @@ class AddScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey,
+                    color: Color.fromARGB(255, 1, 194, 207),
                   )),
             )
           ],

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:todo_list/Models/note.dart';
+import 'package:todolist_mysqllitealfa/Models/catatan.dart';
 
 class dbhelper {
   static final dbhelper instance = dbhelper._();
@@ -18,14 +18,14 @@ class dbhelper {
 
   Future<Database> _initDatabase() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String pathString = path.join(documentsDirectory.path, 'todo_list.db');
+    String pathString = path.join(documentsDirectory.path, 'latihan');
 
     return await openDatabase(
       pathString,
       version: 1,
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE notes(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT)',
+          'CREATE TABLE note_app(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT)',
         );
       },
     );
@@ -33,12 +33,12 @@ class dbhelper {
 
   Future<int> insert(Note note) async {
     final db = await database;
-    return await db.insert('notes', note.toMap());
+    return await db.insert('note_app', note.toMap());
   }
 
   Future<List<Note>> getNotes() async {
     final db = await database;
-    final List<Map<String, dynamic>> maps = await db.query('notes');
+    final List<Map<String, dynamic>> maps = await db.query('note_app');
     return List.generate(maps.length, (index) {
       return Note.fromMap(maps[index]);
     });
@@ -47,7 +47,7 @@ class dbhelper {
   Future<int> update(Note note) async {
     final db = await database;
     return await db.update(
-      'notes',
+      'note_app',
       note.toMap(),
       where: 'id = ?',
       whereArgs: [note.id],
@@ -57,7 +57,7 @@ class dbhelper {
   Future<int> delete(Note note) async {
     final db = await database;
     return await db.delete(
-      'notes',
+      'note_app',
       where: 'id = ?',
       whereArgs: [note.id],
     );
